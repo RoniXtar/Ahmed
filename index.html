@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ahmed's professional portfolio - ERP Implementation, Accounts, Inventory and IT Support.">
+  <title>Ahmed | ERP & IT Portfolio</title>
+  <style>
+    :root{--bg:#0c1222;--panel:#131d32;--panel2:#182541;--text:#f3f6ff;--muted:#aab6cc;--accent:#7c8cff;--accent2:#48d6bd;--line:#283653}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:10;background:#0c1222ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:22px;font-weight:800;letter-spacing:-.7px}.brand span{color:var(--accent)}
+    .navlinks{display:flex;align-items:center;gap:25px;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--accent2)}
+    .menu-btn{display:none;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:8px 12px}
+    .hero{padding:94px 0 76px;display:grid;grid-template-columns:1.35fr .65fr;align-items:center;gap:45px}
+    .eyebrow{display:inline-flex;gap:9px;align-items:center;color:var(--accent2);font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent2);box-shadow:0 0 14px var(--accent2)}
+    h1{font-size:clamp(42px,6vw,68px);line-height:1.08;letter-spacing:-2.5px;margin:18px 0}.gradient{background:linear-gradient(90deg,#9aa7ff,#58e0c8);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .intro{color:var(--muted);font-size:17px;max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:10px;font-weight:700;border:1px solid transparent}
+    .primary{background:var(--accent);color:#0b1020}.outline{border-color:#465678;color:var(--text);background:transparent}.btn:hover{transform:translateY(-2px)}
+    .profile-card{background:linear-gradient(145deg,#1d2b49,#111a2e);border:1px solid #344465;border-radius:24px;padding:28px;text-align:center;box-shadow:0 25px 70px #0004}
+    .avatar{width:150px;height:150px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#818fff,#48d6bd);color:#111a2e;font-size:48px;font-weight:900;border:6px solid #ffffff18}
+    .profile-card h2{margin:8px 0 2px;font-size:23px}.profile-card p{margin:0;color:var(--muted);font-size:14px}.mini-tags{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin-top:18px}.mini-tags span{font-size:11px;color:#dce4ff;background:#ffffff10;padding:6px 9px;border-radius:20px}
+    section{padding:65px 0;border-top:1px solid var(--line)}.section-title{margin-bottom:28px}.section-title small{color:var(--accent2);font-weight:800;text-transform:uppercase;letter-spacing:1.6px}.section-title h2{font-size:34px;letter-spacing:-1px;margin:5px 0}.section-title p{color:var(--muted);margin:0}
+    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}.text-panel,.info-panel,.skill,.project,.timeline-card,.contact-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:23px}
+    .text-panel p{color:var(--muted);margin-top:0}.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.info{background:var(--panel2);padding:14px;border-radius:11px}.info small{display:block;color:var(--muted);font-size:12px}.info b{font-size:14px}
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.skill h3{margin:0 0 8px;font-size:17px}.skill p{color:var(--muted);font-size:14px;margin:0}.skill-icon{font-size:25px;margin-bottom:9px}
+    .timeline{display:grid;gap:15px}.timeline-card{position:relative}.timeline-card h3{margin:0;font-size:19px}.timeline-card .meta{color:var(--accent2);font-size:13px;font-weight:700}.timeline-card p{color:var(--muted);margin:8px 0 0}
+    .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.project h3{margin:0 0 8px}.project p{color:var(--muted);margin:0 0 14px}.chips{display:flex;gap:7px;flex-wrap:wrap}.chips span{font-size:11px;padding:5px 8px;border-radius:20px;background:#273653;color:#d9e2ff}
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:18px}.contact-card p{color:var(--muted)}.contact-line{padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}.contact-line:last-child{border:0}
+    form{display:grid;gap:12px}label{font-size:13px;color:var(--muted)}input,textarea{display:block;width:100%;margin-top:5px;background:#0d172b;color:var(--text);border:1px solid #344465;border-radius:9px;padding:12px;outline-color:var(--accent)}textarea{min-height:110px;resize:vertical}
+    .form-msg{font-size:13px;color:var(--accent2);min-height:20px}footer{padding:25px 0;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+    .top{position:fixed;right:20px;bottom:20px;width:42px;height:42px;border:1px solid #465678;border-radius:12px;background:var(--panel2);color:#fff;display:none}.top.show{display:block}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;padding:65px 0 55px}.profile-card{max-width:430px}.about-grid,.contact-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.wrap{width:min(100% - 30px,1120px)}nav{height:64px}.menu-btn{display:block}.navlinks{display:none;position:absolute;top:64px;left:0;right:0;padding:18px 20px;background:#111a2e;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.hero{gap:28px}.intro{font-size:15px}section{padding:48px 0}.section-title h2{font-size:29px}.skills-grid,.project-grid{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr 1fr}.profile-card{padding:22px}}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#home">Ahmed<span>.</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰ Menu</button>
+    <div class="navlinks" id="navLinks">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="hero" id="home" style="border:0">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> ERP Implementation & IT Support</div>
+        <h1>Hello, I'm <span class="gradient">Ahmed.</span><br>I make business systems work better.</h1>
+        <p class="intro">I work with ERP implementation, user training, accounts, inventory and day-to-day IT support. I enjoy helping businesses use technology to make their operations smoother and more organized.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore My Work ↓</a>
+          <a class="btn outline" href="#contact">Contact Me</a>
+        </div>
+      </div>
+      <aside class="profile-card">
+        <div class="avatar">A</div>
+        <h2>Ahmed</h2>
+        <p>ERP Implementation Professional</p>
+        <div class="mini-tags"><span>ERP</span><span>Accounts</span><span>Inventory</span><span>IT Support</span></div>
+      </aside>
+    </section>
+
+    <section id="about">
+      <div class="section-title"><small>Who I Am</small><h2>About Me</h2><p>A quick introduction to my professional background.</p></div>
+      <div class="about-grid">
+        <div class="text-panel">
+          <p>I have over 2 years of experience in ERP implementation and customer training. My work includes helping new clients get started, explaining business workflows, supporting users and troubleshooting common software and hardware issues.</p>
+          <p>I have worked with retail, grocery, wholesale, distribution and other business environments. I focus on practical solutions, clear communication and accurate business records.</p>
+          <p>My goal is to continue growing in ERP, IT operations and business technology.</p>
+        </div>
+        <div class="info-panel">
+          <div class="info-grid">
+            <div class="info"><small>Experience</small><b>2+ Years</b></div>
+            <div class="info"><small>Core Area</small><b>ERP Implementation</b></div>
+            <div class="info"><small>Modules</small><b>Accounts & Inventory</b></div>
+            <div class="info"><small>Support</small><b>Online & On-site</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-title"><small>What I Do</small><h2>Skills & Expertise</h2><p>Practical skills used in business software implementation and support.</p></div>
+      <div class="skills-grid">
+        <article class="skill"><div class="skill-icon">🧾</div><h3>ERP Implementation</h3><p>New client setup, configuration support, workflow guidance and user onboarding.</p></article>
+        <article class="skill"><div class="skill-icon">📊</div><h3>Accounts</h3><p>Vouchers, ledgers, payables, receivables and basic accounting workflows.</p></article>
+        <article class="skill"><div class="skill-icon">📦</div><h3>Inventory</h3><p>Item setup, stock control, purchase, sales, GRN and stock reconciliation.</p></article>
+        <article class="skill"><div class="skill-icon">🖥️</div><h3>IT Support</h3><p>Windows installation, hardware troubleshooting, printers and remote support.</p></article>
+        <article class="skill"><div class="skill-icon">🌐</div><h3>Networking</h3><p>LAN troubleshooting, IP configuration and network printer support.</p></article>
+        <article class="skill"><div class="skill-icon">🏷️</div><h3>Reports & Labels</h3><p>Barcode labels, receipt layouts, business reports and data accuracy checks.</p></article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-title"><small>My Journey</small><h2>Experience</h2><p>Professional experience and responsibilities.</p></div>
+      <div class="timeline">
+        <article class="timeline-card">
+          <div class="meta">2+ YEARS · ERP & CUSTOMER SUPPORT</div>
+          <h3>ERP Implementation & Trainer</h3>
+          <p><b>Johar Software House / Multi Soft</b></p>
+          <p>Support online and on-site ERP implementation, train customers on accounts and inventory workflows, assist with purchase and sales operations, resolve user issues and help maintain reliable business records.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-title"><small>Practical Work</small><h2>Projects & Work Areas</h2><p>Examples of business workflows I support.</p></div>
+      <div class="project-grid">
+        <article class="project"><h3>Retail ERP Setup</h3><p>Assisting retail and grocery businesses with item records, sales entries, stock management and user training.</p><div class="chips"><span>Retail</span><span>Sales</span><span>Stock</span></div></article>
+        <article class="project"><h3>Accounts Workflow</h3><p>Guiding users through cash vouchers, ledgers, expense entries, payables and receivables.</p><div class="chips"><span>Accounts</span><span>Vouchers</span><span>Ledger</span></div></article>
+        <article class="project"><h3>Inventory Control</h3><p>Supporting purchase orders, goods receiving, stock checking, reconciliation and inventory reports.</p><div class="chips"><span>Purchase</span><span>GRN</span><span>Reports</span></div></article>
+        <article class="project"><h3>IT & Printer Support</h3><p>Helping users resolve Windows, LAN, barcode printer, receipt printer and hardware issues.</p><div class="chips"><span>Windows</span><span>Networking</span><span>Printers</span></div></article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title"><small>Let's Connect</small><h2>Contact Me</h2><p>Have an ERP, implementation or IT support opportunity? Send a message.</p></div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Get in touch</h3>
+          <p>This demo portfolio uses editable placeholder contact details. Replace these with the details you want to publish.</p>
+          <div class="contact-line">📍 Location: Karachi, Pakistan</div>
+          <div class="contact-line">✉️ Email: muhammadahmed033534@gmail.com</div>
+          <div class="contact-line">📱 WhatsApp: 03353415841</div>
+          <div class="contact-line">💼 LinkedIn: Add your profile link</div>
+        </div>
+        <div class="contact-card">
+          <form id="contactForm">
+            <label>Your name<input name="name" required placeholder="Enter your name"></label>
+            <label>Your email<input name="email" type="email" required placeholder="name@example.com"></label>
+            <label>Message<textarea name="message" required placeholder="Write your message..."></textarea></label>
+            <button class="btn primary" type="submit">Send Demo Message</button>
+            <div class="form-msg" id="formMsg" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer><div class="wrap">© <span id="year"></span> Ahmed. Portfolio website built with HTML, CSS & JavaScript.</div></footer>
+<button class="top" id="topBtn" aria-label="Back to top">↑</button>
+
+<script>
+  // Mobile navigation menu
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+  menuBtn.addEventListener("click", () => navLinks.classList.toggle("open"));
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => navLinks.classList.remove("open"));
+  });
+
+  // Demo contact form: validates fields, but does not send data to a server.
+  document.getElementById("contactForm").addEventListener("submit", event => {
+    event.preventDefault();
+    const form = event.target;
+    const name = new FormData(form).get("name");
+    document.getElementById("formMsg").textContent =
+      `Thank you, ${name}! This is a demo form. Connect a backend to receive real messages.`;
+    form.reset();
+  });
+
+  // Current year in the footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Show back-to-top button after scrolling
+  const topBtn = document.getElementById("topBtn");
+  window.addEventListener("scroll", () => {
+    topBtn.classList.toggle("show", window.scrollY > 350);
+  });
+  topBtn.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
+</script>
+</body>
+</html>
