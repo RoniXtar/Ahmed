@@ -35,12 +35,174 @@
     .top{position:fixed;right:20px;bottom:20px;width:42px;height:42px;border:1px solid #465678;border-radius:12px;background:var(--panel2);color:#fff;display:none}.top.show{display:block}
     @media(max-width:800px){.hero{grid-template-columns:1fr;padding:65px 0 55px}.profile-card{max-width:430px}.about-grid,.contact-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:600px){.wrap{width:min(100% - 30px,1120px)}nav{height:64px}.menu-btn{display:block}.navlinks{display:none;position:absolute;top:64px;left:0;right:0;padding:18px 20px;background:#111a2e;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.hero{gap:28px}.intro{font-size:15px}section{padding:48px 0}.section-title h2{font-size:29px}.skills-grid,.project-grid{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr 1fr}.profile-card{padding:22px}}
+    
+/* ===== PREMIUM WEBSITE ANIMATIONS ===== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hero entrance */
+.hero > div:first-child {
+    animation: slideLeft 1s ease both;
+}
+
+.profile-card {
+    animation: slideRight 1s ease both, floatProfile 4s ease-in-out 1s infinite;
+    transition: transform .4s, box-shadow .4s;
+}
+
+/* Floating profile */
+@keyframes floatProfile {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* Entrance animations */
+@keyframes slideLeft {
+    from { opacity: 0; transform: translateX(-45px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+    from { opacity: 0; transform: translateX(45px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(35px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Gradient text animation */
+.gradient {
+    background-size: 200% auto;
+    animation: gradientMove 4s ease infinite;
+}
+
+@keyframes gradientMove {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+}
+
+/* Scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Cards hover animation */
+.skill, .project, .timeline-card, .text-panel, .info-panel {
+    transition: transform .35s ease, border-color .35s ease,
+                box-shadow .35s ease;
+}
+
+.skill:hover, .project:hover, .timeline-card:hover {
+    transform: translateY(-9px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px #0004;
+}
+
+/* Profile glow */
+.profile-card:hover {
+    box-shadow: 0 25px 80px #7c8cff35;
+}
+
+/* Button animation */
+.btn {
+    transition: all .3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 25px #7c8cff40;
+}
+
+/* Avatar animation */
+.avatar {
+    animation: avatarGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes avatarGlow {
+    from { box-shadow: 0 0 10px #7c8cff55; }
+    to { box-shadow: 0 0 30px #48d6bd88; }
+}
+
+/* Navigation animation */
+.navlinks a {
+    transition: color .3s ease, transform .3s ease;
+}
+
+.navlinks a:hover {
+    transform: translateY(-3px);
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* PAGE LOAD TEXT SLIDE ANIMATION */
+
+.hero > div:first-child {
+    animation: textSlideIn 1.2s ease-out both;
+}
+
+.profile-card {
+    animation: profileSlideIn 1.2s ease-out both;
+}
+
+@keyframes textSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes profileSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Mobile Animation */
+@media (max-width: 800px) {
+    .hero > div:first-child {
+        animation: textSlideIn 1.2s ease-out both;
+    }
+
+    .profile-card {
+        animation: profileSlideIn 1.2s ease-out both;
+    }
+}
+
+
   </style>
 </head>
 <body>
 <header>
   <nav class="wrap">
-    <a class="brand" href="#home">AHMED<span>.</span></a>
+    <a class="brand" href="#home">Ahmed<span>.</span></a>
     <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰ Menu</button>
     <div class="navlinks" id="navLinks">
       <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
@@ -128,8 +290,8 @@
           <h3>Get in touch</h3>
           <p>This demo portfolio uses editable placeholder contact details. Replace these with the details you want to publish.</p>
           <div class="contact-line">📍 Location: Karachi, Pakistan</div>
-          <div class="contact-line">✉️ Email: muhammadahmed033534@gmail.com</div>
-          <div class="contact-line">📱 WhatsApp: 03353415841</div>
+          <div class="contact-line">✉️ Email: your-email@example.com</div>
+          <div class="contact-line">📱 WhatsApp: Add your number</div>
           <div class="contact-line">💼 LinkedIn: Add your profile link</div>
         </div>
         <div class="contact-card">
@@ -177,6 +339,32 @@
     topBtn.classList.toggle("show", window.scrollY > 350);
   });
   topBtn.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
+
+/* ===== SCROLL REVEAL ANIMATION ===== */
+
+const revealElements = document.querySelectorAll(
+    "section > .section-title, .about-grid, .skill, .timeline-card, .project, .contact-card"
+);
+
+revealElements.forEach(element => {
+    element.classList.add("reveal");
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.12
+});
+
+revealElements.forEach(element => {
+    revealObserver.observe(element);
+});
+
 </script>
 </body>
 </html>
