@@ -312,6 +312,165 @@ header, main, footer {
         opacity: .35;
     }
 }
+    
+/* ===== MOBILE RESPONSIVE FIX ===== */
+
+@media (max-width: 800px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 55px 0 45px;
+        gap: 28px;
+    }
+
+    .profile-card {
+        width: 100%;
+        max-width: 430px;
+        margin: auto;
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+
+    .wrap {
+        width: calc(100% - 30px);
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav {
+        height: 64px;
+        position: relative;
+    }
+
+    .menu-btn {
+        display: block;
+        position: relative;
+        z-index: 1002;
+        padding: 10px 14px;
+        min-height: 44px;
+        cursor: pointer;
+        touch-action: manipulation;
+    }
+
+    /* Mobile Dropdown Menu */
+    .navlinks {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 1001;
+
+        padding: 10px;
+        background: #111a2e;
+        border: 1px solid #283653;
+        border-radius: 0 0 14px 14px;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        box-shadow: 0 18px 35px #0008;
+    }
+
+    .navlinks.open {
+        display: flex;
+    }
+
+    .navlinks a {
+        display: block;
+        width: 100%;
+        padding: 13px 15px;
+        font-size: 15px;
+        border-radius: 8px;
+    }
+
+    .navlinks a:active {
+        background: #ffffff15;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 45px 0 40px;
+        gap: 25px;
+    }
+
+    h1 {
+        font-size: clamp(34px, 9vw, 44px);
+        line-height: 1.12;
+        letter-spacing: -1.7px;
+        margin: 16px 0;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .intro {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .actions {
+        gap: 10px;
+        margin-top: 22px;
+    }
+
+    .btn {
+        padding: 11px 14px;
+        font-size: 14px;
+    }
+
+    section {
+        padding: 45px 0;
+    }
+
+    .section-title h2 {
+        font-size: 29px;
+    }
+
+    .skills-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .profile-card {
+        padding: 22px;
+    }
+
+    .bubble {
+        filter: blur(55px);
+        opacity: .28;
+    }
+}
+
+@media (max-width: 380px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .actions .btn {
+        width: 100%;
+    }
+}
 
 
   </style>
